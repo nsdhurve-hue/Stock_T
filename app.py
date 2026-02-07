@@ -1,15 +1,12 @@
 import streamlit as st
-import yfinance as yf
-import datetime as d
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sb
 
 st.title("📊 Stock Price Dashboard")
 
-# 👉 Load your dataframe (adjust this if you're already loading df differently)
-# Example:
-# df = pd.read_csv("Stock_T.csv", parse_dates=["Date"])
+# ✅ Load your CSV
+df = pd.read_csv("Stock_T.csv", parse_dates=["Date"])
 
 # Show available stocks
 st.subheader("Select a Stock")
@@ -36,4 +33,3 @@ st.download_button(
     file_name=f"{selected_stock}_data.csv",
     mime="text/csv"
 )
-
